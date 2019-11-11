@@ -10,14 +10,10 @@
 // And add it to the DOM in the .header-container component
 
 function createHeader(data) {
-    const header = document.createElement('div');
-    const headerDate = document.createElement('span');
-    const headerHeadline = document.createElement('h1');
-    const headerTemp = document.createElement('span');
-
-    header.appendChild(headerDate);
-    header.appendChild(headerHeadline);
-    header.appendChild(headerTemp);
+    let header = document.createElement('div');
+    let headerDate = document.createElement('span');
+    let headerHeadline = document.createElement('h1');
+    let headerTemp = document.createElement('span');
 
     headerDate.textContent = data.date;
     headerHeadline.textContent = data.headline;
@@ -28,11 +24,14 @@ function createHeader(data) {
     headerHeadline.classList.add(' h1');
     headerTemp.classList.add('.temp');
 
-    return header;
+    header.appendChild(headerDate);
+    header.appendChild(headerHeadline);
+    header.appendChild(headerTemp);
+    document.querySelector('.header-container').appendChild(header);
 
 }
 
-const headers = document.querySelector('.header-container');
-headers.forEach(element => {
-    headers.appendChild(createHeader(element));
-})
+// const headers = 
+// headers.forEach(element => {
+//     headers.appendChild(createHeader(element));
+// })

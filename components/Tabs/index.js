@@ -8,48 +8,20 @@
 //  The tab component should look like this:
 //  <div class="tab">topic here</div>
 
-const entryPoint = document.querySelector(".entry");
-
-axios
-    .get('https://lambda-times-backend.herokuapp.com/topics')
-    .then((results => {
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then((results) => {
         console.log(results);
-        results.data.message.forEach(url => {
-            const tabCard = tabCard(url);
-            entryPoint.appendChild(tabCard);
-        })
-    }))
+        tabCard(results);
+    })
     .catch((err) => {
         console.log(err);
     })
 
-function tabCardCreator(obj) {
-    // Create all elements
-    const tabs = document.createElement("div");
-    const tabTopics = document.createElement("div");
-    const tabTitle = document.createElement("span");
 
-
-    // Structure
-    tabs.appendChild(tabTopics);
-    tabs.appendChild(tabTitle);
-
-
-
-    // Content
-    tabs.setAttribute(url.obj.tabs);
-    tabTitle.textContent = obj.topics;
-    tabTopics.textContent = obj.temp;
-
-
-    // Styles
-    tabs.classList.add(".tabs");
-    tabTopics.classList.add(".topics");
-    tabTitle.classList.add(".title");
-
-
-    return tabs;
-
+function tabCard(topics) {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = topics;
+    document.querySelector('.topics').appendChild(tab);
 }
 
-const newTabss = document.querySelector('.tabs');

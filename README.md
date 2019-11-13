@@ -41,7 +41,7 @@ An event listener is a procedure or a function in a program that waits for an ev
 NodeLists are not a JavaScript API. This prevents a number of methods from working. An array will work with these methods.
 
 5. What is a component?
-Components are much like functions. Components allow you to become more granular by splitting the UI into smaller, reusable parts.
+Components are much like functions. Components allow you to become more granular by splitting the UI into smaller, reusable parts.          
 
 ### Git Set up
 

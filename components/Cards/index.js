@@ -38,8 +38,8 @@ const dataTopics = [
 
 dataTopics.forEach((articles) => {
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
-        .then((results) => {
-            artCards(results);
+        .then((result) => {
+            artCards(result);
         })
         .catch((err) => {
             console.log(err);
@@ -55,7 +55,7 @@ function artCards(articles) {
     let cardCredit = document.createElement('span');
 
     //  Content
-    cardHeadline.textContent = articles;
+    cardHeadline.textContent = articles.headline;
     cardAuthor.textContent = articles.authorName;
     cardImg.src = articles.authorPhoto;
     cardCredit.textContent = articles.span;
